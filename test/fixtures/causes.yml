@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  problem: MyString
+  origin: MyString
+  destiny: MyString
+  company: MyString
+  description: MyText
+
+two:
+  problem: MyString
+  origin: MyString
+  destiny: MyString
+  company: MyString
+  description: MyText

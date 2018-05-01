@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Problem:</strong>
+  <%= @cause.problem %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @cause.origin %>
+</p>
+
+<p>
+  <strong>Destiny:</strong>
+  <%= @cause.destiny %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @cause.company %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @cause.description %>
+</p>
+
+<%= link_to 'Edit', edit_cause_path(@cause) %> |
+<%= link_to 'Back', causes_path %>
