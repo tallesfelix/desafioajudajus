@@ -4,6 +4,50 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :name, 'Nome Completo' %><br />
+    <%= f.text_field :name , autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cpf, 'CPF' %><br />
+    <%= f.text_field :cpf , autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birth, 'Data de Nascimento' %><br />
+    <%= f.date_field :birth , autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :maritalstatus, 'Estado Civil' %><br />
+    <%= f.select :maritalstatus ,['Solteiro(a)', 'Casado(a)', 'Divorciado(a)', 'Viuvo(a)'] ,autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telephone, 'Telefone' %><br />
+    <%= f.text_field :telephone , autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :neighborhood, 'Bairro' %><br />
+    <%= f.text_field :neighborhood , autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :state, 'Estado' %><br />
+    <%= f.text_field :state , autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city, 'Cidade' %><br />
+    <%= f.text_field :city , autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :street, 'Endereço' %><br />
+    <%= f.text_field :street , autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
