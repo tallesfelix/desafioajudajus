@@ -4,7 +4,9 @@ class CausesController < ApplicationController
   # GET /causes
   # GET /causes.json
   def index
-    @causes = Cause.all
+    if user_signed_in?
+      @causes = Cause.where(:user_id => current_user.id).order('created_at DESC')
+    end
   end
 
   # GET /causes/1
