@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_01_140751) do
+ActiveRecord::Schema.define(version: 2018_05_01_180819) do
 
   create_table "causes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "problem"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2018_05_01_140751) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "causes_count", default: 0
     t.index ["email"], name: "index_lawyers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_lawyers_on_reset_password_token", unique: true
   end
@@ -63,6 +64,7 @@ ActiveRecord::Schema.define(version: 2018_05_01_140751) do
     t.string "state"
     t.string "city"
     t.string "street"
+    t.integer "lawyer_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

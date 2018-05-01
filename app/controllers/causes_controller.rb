@@ -73,4 +73,5 @@ class CausesController < ApplicationController
     def cause_params
       params.require(:cause).permit(:problem, :origin, :destiny, :company, :description)
     end
+
 end
