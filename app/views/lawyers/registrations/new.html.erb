@@ -2,6 +2,35 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cpf %><br />
+    <%= f.text_field :cpf, autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= f.label :birth %><br />
+    <%= f.date_field :birth, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :oab %><br />
+    <%= f.text_field :oab, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state, 'Estado' %><br />
+    <%= f.select :state ,options_for_select(brazilian_states) ,autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telephone %><br />
+    <%= f.text_field :telephone, autofocus: true %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />

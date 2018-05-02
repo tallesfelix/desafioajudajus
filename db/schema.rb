@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_01_180819) do
+ActiveRecord::Schema.define(version: 2018_05_02_030332) do
 
   create_table "causes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "problem"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_05_01_180819) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.integer "lawyer_id"
     t.index ["user_id"], name: "index_causes_on_user_id"
   end
 
@@ -38,6 +39,12 @@ ActiveRecord::Schema.define(version: 2018_05_01_180819) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "causes_count", default: 0
+    t.string "name"
+    t.date "birth"
+    t.string "cpf"
+    t.string "oab"
+    t.string "state"
+    t.string "telephone"
     t.index ["email"], name: "index_lawyers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_lawyers_on_reset_password_token", unique: true
   end

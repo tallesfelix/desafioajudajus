@@ -21,6 +21,9 @@
             <li><%= link_to 'Nova Causa', new_cause_path %></li>
             <li><%= link_to 'Conta', edit_user_registration_path %></li>
             <li><%= link_to 'Sair', destroy_user_session_path, method: :delete %></li>
+          <% elsif lawyer_signed_in? %>
+            <li><%= link_to 'Conta', edit_lawyer_registration_path %></li>
+            <li><%= link_to 'Sair', destroy_lawyer_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'Cadastre-se', new_user_registration_path %></li>
             <li><%= link_to 'Login', new_user_session_path %></li>

@@ -4,4 +4,5 @@ class Lawyer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :users
+  has_many :causes, through: :users
 end

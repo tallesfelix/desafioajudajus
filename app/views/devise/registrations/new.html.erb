@@ -34,7 +34,7 @@
   </div>
   <div class="field">
     <%= f.label :state, 'Estado' %><br />
-    <%= f.text_field :state , autofocus: true %>
+    <%= f.select :state ,options_for_select(brazilian_states) ,autofocus: true %>
   </div>
 
   <div class="field">

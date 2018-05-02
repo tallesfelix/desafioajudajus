@@ -6,6 +6,8 @@ class CausesController < ApplicationController
   def index
     if user_signed_in?
       @causes = Cause.where(:user_id => current_user.id).order('created_at DESC')
+    elsif lawyer_signed_in?
+      @causes = Cause.where(:lawyer_id => current_lawyer)
     end
   end
 
@@ -27,7 +29,7 @@ class CausesController < ApplicationController
   # POST /causes.json
   def create
     @cause = current_user.causes.build(cause_params)
-
+    @cause.lawyer_id = current_user.lawyer_id
     respond_to do |format|
       if @cause.save
         format.html { redirect_to @cause, notice: 'Cause was successfully created.' }
