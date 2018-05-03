@@ -7,7 +7,8 @@ class User < ApplicationRecord
   belongs_to :lawyer
 
   before_validation :create_lawyer
- # Here we creating account and assing account_id to user
+ # Aqui escolhemos um advogado e definimos ele para o user.lawyer_id
+ # É escolhido o advogado com o menor numero de clientes do estado
   def create_lawyer
  	state = self.state
 	count = Lawyer.where(state: state).minimum(:causes_count)

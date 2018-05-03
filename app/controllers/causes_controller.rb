@@ -5,9 +5,9 @@ class CausesController < ApplicationController
   # GET /causes.json
   def index
     if user_signed_in?
-      @causes = Cause.where(:user_id => current_user.id).order('created_at DESC')
+      @causes = Cause.where(:user_id => current_user.id).order('created_at DESC') #Index caso o usuario esteja logado
     elsif lawyer_signed_in?
-      @causes = Cause.where(:lawyer_id => current_lawyer)
+      @causes = Cause.where(:lawyer_id => current_lawyer) #Index caso o advogado esteja logado
     end
   end
 
