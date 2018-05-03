@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
+  adapter: pg
+  username: root
+  password: admin
   database: ajuda4_production
   username: ajuda4
   password: <%= ENV['AJUDA4_DATABASE_PASSWORD'] %>
