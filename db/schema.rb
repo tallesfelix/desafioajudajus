@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2018_05_02_030332) do
 
-  create_table "causes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "causes", force: :cascade do |t|
     t.string "problem"
     t.string "origin"
     t.string "destiny"
@@ -25,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_05_02_030332) do
     t.index ["user_id"], name: "index_causes_on_user_id"
   end
 
-  create_table "lawyers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "lawyers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -49,7 +52,7 @@ ActiveRecord::Schema.define(version: 2018_05_02_030332) do
     t.index ["reset_password_token"], name: "index_lawyers_on_reset_password_token", unique: true
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
